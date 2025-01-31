@@ -7,6 +7,20 @@ Spherical Convolutional Wasserstein Distance
 
 ## Examples
 
+```python
+import torch
+import torch_harmonics as th
+import scwd
+
+from torch_harmonics.random_fields import GaussianRandomFieldS2
+GRF_x = GaussianRandomFieldS2(nlat = 90)
+GRF_y = GaussianRandomFieldS2(nlat = 90)
+x = GRF_x(100)
+y = GRF_y(200)
+
+scwd(x, y)[1]
+```
+
 ## Cite us
 
 If you use `SCWD` in an academic paper, please cite [1]
