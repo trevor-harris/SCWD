@@ -18,7 +18,7 @@ GRF_y = GaussianRandomFieldS2(nlat = 90)
 x = GRF_x(100)
 y = GRF_y(200)
 
-scwd(x, y)[1]
+scwd_map, scwd_val = scwd(x, y)
 ```
 
 ## Cite us
