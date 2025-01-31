@@ -22,8 +22,8 @@ pip install SCWD/
 ```python
 import torch
 import torch_harmonics as th
-from scwd.metrics import scwd
 from torch_harmonics.random_fields import GaussianRandomFieldS2
+from scwd.metrics import scwd
 
 # generate two GPs on the sphere (nlat = 90, nlon = 180)
 GRF_x = GaussianRandomFieldS2(nlat = 90)
