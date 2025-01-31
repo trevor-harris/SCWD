@@ -19,7 +19,10 @@ If you use `SCWD` in an academic paper, please cite [1]
   year={2024}
 }
 ```
-
 ## References
+<a id='1'>[1]</a>
+Garrett R., Harris T., Li B., Wang Z.; 
+Validating Climate Models with Spherical Convolutional Wasserstein Distance;
+Neural Information Processing Systems, 2024. [arxiv link](https://arxiv.org/abs/2401.14657)
 
 
