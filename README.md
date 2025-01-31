@@ -5,6 +5,8 @@ Spherical Convolutional Wasserstein Distance
 
 SCWD implements the Spherical Convolutional Sliced wassetstein distance [1] in pytorch using the torch-harmonics library [2]. SCWD uses DISCO convolutions [3] for fast and efficient evaluation of the SCWD metric.
 
+![diagram_neurips](https://github.com/user-attachments/assets/ebd9953d-c459-47c5-aa0e-94e2a1544fb5)
+
 ## Installation
 ```bash
 git clone https://github.com/trevor-harris/SCWD
