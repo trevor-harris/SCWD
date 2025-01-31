@@ -43,14 +43,17 @@ If you use `SCWD` in an academic paper, please cite [1]
 <a id='1'>[1]</a>
 Garrett R., Harris T., Li B., Wang Z.; 
 Validating Climate Models with Spherical Convolutional Wasserstein Distance;
-Neural Information Processing Systems, 2024. [arxiv link](https://arxiv.org/abs/2401.14657)
+Neural Information Processing Systems (NeurIPS), 2024. [arxiv link](https://arxiv.org/abs/2401.14657)
 
 <a id="1">[2]</a>
 Bonev B., Kurth T., Hundt C., Pathak, J., Baust M., Kashinath K., Anandkumar A.;
 Spherical Fourier Neural Operators: Learning Stable Dynamics on the Sphere;
-International Conference on Machine Learning, 2023. [arxiv link](https://arxiv.org/abs/2306.03838)
+International Conference on Machine Learning (ICML), 2023. [arxiv link](https://arxiv.org/abs/2306.03838)
 
 <a id="1">[3]</a>
-Ocampo, Price, McEwen, Scalable and equivariant spherical CNNs by discrete-continuous (DISCO) convolutions, ICLR (2023), arXiv:2209.13603
+Jeremy Ocampo, Matthew A. Price, Jason D. McEwen
+Ocampo J., Price M., McEwen J.;
+Scalable and equivariant spherical CNNs by discrete-continuous (DISCO) convolutions;
+International Conference on Learning Representations (ICLR) (2023) [arxiv link](https://arxiv.org/abs/2209.13603)
 
 
