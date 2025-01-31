@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/scwd/__init__.py
+src/scwd/metrics.py
+src/scwd.egg-info/PKG-INFO
+src/scwd.egg-info/SOURCES.txt
+src/scwd.egg-info/dependency_links.txt
+src/scwd.egg-info/top_level.txt

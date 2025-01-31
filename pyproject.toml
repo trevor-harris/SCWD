@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scwd"
+version = "0.0.1"
+authors = [
+  { name="Trevor Harris", email="trevor.a.harris@uconn.edu" },
+]
+description = "Spherical Convolutional Wasserstein Distances (SCWD) for Climate Model Evaluation"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/trevor-harris/SCWD"
+Issues = "https://github.com/trevor-harris/SCWD/issues"
