@@ -1,5 +1,6 @@
 import torch
 import torch_harmonics as th
+import warnings
 
 # comptutes the 1D Wasserstein_2 distance
 def wass(f, g, n_quant = None, eps = None):
@@ -111,8 +112,10 @@ def scwd(x: torch.tensor, y: torch.tensor, kernel = (3, 6), n_quant = None, eps 
 
     # compute sliced wasserstein distance maps
     with torch.no_grad():
-        f = sphere_conv_x(x.to(device)).detach().cpu()
-        g = sphere_conv_y(y.to(device)).detach().cpu()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            f = sphere_conv_x(x.to(device)).detach().cpu()
+            g = sphere_conv_y(y.to(device)).detach().cpu()
     scwd_map = wass(f, g, n_quant, eps)
     scwd_distance = torch.mean(scwd_map)
     
