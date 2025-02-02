@@ -41,8 +41,9 @@ def s2conv(dim_in, dim_out, kernel_shape):
 
     # set weights to constant (1/kernel size)
     sphere_conv.weight = torch.nn.Parameter(torch.ones(1, 1, sphere_conv.weight.shape[-1]))
-    sphere_conv.weight = torch.nn.Parameter(sphere_conv.weight / torch.sum(sphere_conv.weight))
     sphere_conv.weight.requires_grad_(False)
+    sphere_conv.weight[(sphere_conv.weight.shape[-1]//2):] = 0
+    sphere_conv.weight = torch.nn.Parameter(sphere_conv.weight / torch.sum(sphere_conv.weight))
     return sphere_conv
 
 # computes the SCWD distance returns a map and the overall value
