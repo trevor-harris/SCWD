@@ -3,7 +3,7 @@ Spherical Convolutional Wasserstein Distance
 
 ## Overview
 
-SCWD implements the Spherical Convolutional Sliced wassetstein distance [1] in pytorch using the torch-harmonics library [2]. SCWD uses DISCO convolutions [3] for fast and efficient evaluation of the SCWD metric.
+`SCWD` implements the Spherical Convolutional Wassetstein Distance (SCWD) [1] in pytorch using the torch-harmonics library [2]. `SCWD` uses DISCO convolutions [3] for fast and efficient evaluation of the SCWD metric.
 
 The SCWD metric was developed to compare the distributions of two spatiotemporal processes observed on the surface a sphere. For example, comparing the output of two climate models or comparing the output of a climate model against historical reanalysis data. The SCWD metric uses convolutional slicing to create localized projections of the two processes and the 1D Wasserstein distance to compare the projected distributions. This operation is performed with a slice centered at every grid point, leading to a map of local SCWD distances. Averaging the local SCWD distances gives the full SCWD metric.
 
@@ -35,6 +35,9 @@ y = GRF_y(200)
 
 scwd_map, scwd_val = scwd(x, y)
 ```
+
+## Notes
+This package is under active development. We currently use the default piecewise linear kernel in `torch-harmonics` instead of the Wendland kernel described in [1]. We also do not take full advantage of the GPU yet. More SCWD variants, kernels, and GPU support forthcoming.
 
 ## Cite us
 
