@@ -37,7 +37,7 @@ scwd_map, scwd_val = scwd(x, y)
 ```
 
 ## Notes
-This package is under active development. We currently use the default piecewise linear kernel in `torch-harmonics` instead of the Wendland kernel described in [1]. We also do not take full advantage of the GPU yet. More SCWD variants, kernels, and GPU support forthcoming.
+This package is under active development. We currently use the default piecewise linear kernel in [`torch-harmonics`](https://github.com/NVIDIA/torch-harmonics) instead of the Wendland kernel described in [1]. We also do not take full advantage of the GPU yet. More SCWD variants, kernels, and GPU support forthcoming.
 
 ## Cite us
 
