@@ -42,12 +42,12 @@ def s2conv(dim_in, dim_out, kernel_shape):
     # set weights to constant (1/kernel size)
     sphere_conv.weight = torch.nn.Parameter(torch.ones(1, 1, sphere_conv.weight.shape[-1]))
     sphere_conv.weight.requires_grad_(False)
-    sphere_conv.weight[(sphere_conv.weight.shape[-1]//2):] = 0
+    # sphere_conv.weight[(sphere_conv.weight.shape[-1]//2):] = 0
     sphere_conv.weight = torch.nn.Parameter(sphere_conv.weight / torch.sum(sphere_conv.weight))
     return sphere_conv
 
 # computes the SCWD distance returns a map and the overall value
-def scwd(x: torch.tensor, y: torch.tensor, kernel = (3, 3), n_quant = None, eps = None):
+def scwd(x: torch.tensor, y: torch.tensor, kernel = (2, 4), n_quant = None, eps = None, device = None):
     
     '''
     Spherical Convolution Wasserstein Distance (SCWD) maps and distances
@@ -67,7 +67,10 @@ def scwd(x: torch.tensor, y: torch.tensor, kernel = (3, 3), n_quant = None, eps 
 
     kernel: tuple
         Size of the convolving kernel (piecewise linear basis)
-        E.x. (3, 3)
+        E.x. (3, 3) specifies 3 degree steps in lat and lon
+        E.x. (2, 4) specifies 2 degree steps in lat, 4 in lon
+        Note: match lat/lon kernel ratio to lat/lon data ratios to reduce distortion
+        Note: keep these numbers small
 
     n_quant: (int or None)
         Number of quantiles to use when approximating the 1D wasserstein distance
@@ -90,7 +93,8 @@ def scwd(x: torch.tensor, y: torch.tensor, kernel = (3, 3), n_quant = None, eps 
     '''
     
     # try GPU if possible
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    if not device:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
 
     # get input lat/lons and find common output lat/lons
     nlat_x, nlon_x = x.shape[1:]
